@@ -4,6 +4,7 @@ import lexical.LexicalAnalysis;
 public class MainApplication {
     public static void main(String args[]){
         //词法分析输入样例
+
         String lexicalPath = "C:/Users/Aron/Desktop/examplse（输入）1.txt";
         //语法分析输入样例
         String grammaticalPath = "";
