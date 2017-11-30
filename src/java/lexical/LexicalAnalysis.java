@@ -10,15 +10,14 @@ import java.util.List;
 
 public class LexicalAnalysis {
 
-    public static final List<String> key = Arrays.asList("begin", "if", "then", "while", "do", "end", "read", "write", "Const", "Var");
-    public static final char[] charArray = {' ','\t','\n','\r','+','-','*','/','=','>','<',';',',','.','(',')','[',']','{','}'};
+    private static final List<String> key = Arrays.asList("begin", "if", "then", "while", "do", "end", "read", "write", "Const", "Var");
+    private static final char[] charArray = {' ','\t','\n','\r','+','-','*','/','=','>','<',';',',','.','(',')','[',']','{','}'};
 
-
-    public void analyse() {
+    public void analyse(String path) {
         int count =1;
         String arr = "";
         try {
-            BufferedInputStream is = new BufferedInputStream(new FileInputStream("C:/Users/Aron/Desktop/examplse（输入）.txt"));
+            BufferedInputStream is = new BufferedInputStream(new FileInputStream(path));
             char ch;
             int chr = -1;
             // is.read()方法：返回读取的字符，如果已到达流的末尾，则返回 -1
@@ -139,17 +138,18 @@ public class LexicalAnalysis {
 
     //判断是不是关键字
     private static boolean isKeyWord(String s) {
-        for (int i = 0; i < key.size(); i++) {
-            if (s.equals(key.get(i))) {
+        for (String stri:key) {
+            if (s.equals(stri)){
                 return true;
             }
+
         }
         return false;
     }
     //判断是不是分界符
     private boolean isDe(char ch){
-        for (int i = 0; i < charArray.length; i++) {
-            if(ch == charArray[i]){
+        for (char c:charArray) {
+            if (ch == c){
                 return true;
             }
         }

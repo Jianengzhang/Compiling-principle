@@ -1,7 +1,7 @@
 package Grammatical;
 
 public class GrammaticalAnalysis {
-    public void analysis(){
+    public void analysis(String path){
 
     }
 
