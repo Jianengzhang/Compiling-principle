@@ -30,7 +30,7 @@ public class LexicalAnalysis {
                     continue;
                 } else if (isLetter(ch)) {
                     arr = "";
-                    while (isLetter(ch) || isNum(ch)) {
+                    while (isLetter(ch) || isDigital(ch)) {
                         arr += ch;
                         is.mark(1);
                         ch = (char) is.read();
@@ -41,9 +41,9 @@ public class LexicalAnalysis {
                     } else
                         System.out.println(count + ":" + "Identifier:\t" + arr);
 
-                } else if (isNum(ch)) {
+                } else if (isDigital(ch)) {
                     arr = "";
-                    while (isNum(ch) || isNum((char) is.read())) {
+                    while (isDigital(ch) || isDigital((char) is.read())) {
                         arr = arr + ch;
                         is.mark(1);
                         ch = (char) is.read();
@@ -121,7 +121,7 @@ public class LexicalAnalysis {
 
 
     //判断是不是数字
-    private boolean isNum(char num) {
+    private boolean isDigital(char num) {
         if (num >= '0' && num <= '9') {
             return true;
         } else
