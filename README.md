@@ -1,4 +1,5 @@
 ## Compiling-principle
+
 ######附录A：S 语言语法的BNF 表示
 
      (1) <程序>→[<常量说明>][<变量说明>]<语句>
@@ -43,7 +44,7 @@
      
      注：产生式中<、>括起的部分表示一个非终结符号，[、]括起的部分表示可选项，{、}括起的部分表示可重复，符号 | 表示“或”。
      
-   ##2、表达式
+##2、表达式
     (1) program -> constExp + varExp + sentence
     
     (2) constExp -> Const + constDef + constRec
