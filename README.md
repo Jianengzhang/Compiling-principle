@@ -42,3 +42,65 @@
      (20) <复合语句>→begin <语句>{；<语句>} end
      
      注：产生式中<、>括起的部分表示一个非终结符号，[、]括起的部分表示可选项，{、}括起的部分表示可重复，符号 | 表示“或”。
+     
+   ##2、表达式
+    (1) program -> constExp + varExp + sentence
+    
+    (2) constExp -> Const + constDef + constRec
+    
+    (3) constRec -> constDef | ε 
+    
+    (4) constDef ->  ide = uInt
+    
+    (5) uInt -> digit + digRec
+    
+    (6) digit -> 0|1|2|...|9
+    
+    (7) digRec -> digit + digRec | ε
+    
+    (8) letter -> a|b|c| … |z
+    
+    (9) ide -> letter + letterRec
+    
+    (10) letterRec -> letterRec | digRec | ε
+    
+    (11) varExp -> Var + ide + ideRec | ε
+    
+    (12) ideRec ->ide +ideRec | ε
+    
+    (13) sen -> assSen | conSen | cirSen | comSen | ε
+    
+    (14) AssSen -> ide = expression
+    
+    (15) expression -> addOpe + item +ItemRec
+    
+    (16) addOpt -> + | - | ε
+    
+    (17) itemRec -> addOpt + Item | ε
+    
+    (18) item -> factor + factorRec
+    
+    (19) factorRec -> mulOpt + factor | ε
+    
+    (20) factor -> ide | uInt | ( expression )
+    
+    (21) addOpt -> + | -
+    
+    (22) mulOpt -> * | /
+    
+    (23) conSen -> if + condition + then + sen + conOpt
+    
+    (25) conOpt -> else + sen | ε
+    
+    (25) condition -> expression + relOpp + expression
+    
+    (26) relOpt -> ＝＝|＜＝|＜|＞|＞＝|＜＞
+    
+    (27) cirSen -> while + condition + do + sen 
+    
+    (28) conSen -> begin + sen + senRec +end
+    
+    (29) senRec -> sen +  senRec | ε
+
+    
+    
