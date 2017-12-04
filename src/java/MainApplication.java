@@ -5,7 +5,7 @@ public class MainApplication {
     public static void main(String args[]){
         //词法分析输入样例
 
-        String lexicalPath = "C:/Users/Aron/Desktop/examplse（输入）1.txt";
+        String lexicalPath = "C:/Users/Aron/Desktop/编译原理/examplse（输入）1.txt";
         //语法分析输入样例
         String grammaticalPath = "";
         LexicalAnalysis lexicalAnalysis = new LexicalAnalysis();

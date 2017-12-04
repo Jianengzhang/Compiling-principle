@@ -1,5 +1,5 @@
-_``_# Compiling-principle
-附录A：S 语言语法的BNF 表示
+# Compiling-principle
+######附录A：S 语言语法的BNF 表示
 
      (1) <程序>→[<常量说明>][<变量说明>]<语句>
      
