@@ -1,4 +1,4 @@
-## Compiling-principle
+## *Compiling-principle*
 
 ######附录A：S 语言语法的BNF 表示
 
@@ -44,8 +44,8 @@
      
      注：产生式中<、>括起的部分表示一个非终结符号，[、]括起的部分表示可选项，{、}括起的部分表示可重复，符号 | 表示“或”。
      
-##2、表达式
-    (1) program -> constExp + varExp + sentence
+##2、*表达式*
+    (1) program -> constExp + varExp + sen
     
     (2) constExp -> Const + constDef + constRec
     
@@ -65,19 +65,19 @@
     
     (10) letterRec -> letterRec | digRec | ε
     
-    (11) varExp -> Var + ide + ideRec | ε
+    (11) varExp -> Var + ide + ideRec
     
     (12) ideRec ->ide +ideRec | ε
     
     (13) sen -> assSen | conSen | cirSen | comSen | ε
     
-    (14) AssSen -> ide = expression
+    (14) assSen -> ide = expression
     
     (15) expression -> addOpe + item +ItemRec
     
-    (16) addOpt -> + | - | ε
+    (16) addOpe -> + | - | ε
     
-    (17) itemRec -> addOpt + Item | ε
+    (17) itemRec -> addOpt + item | ε
     
     (18) item -> factor + factorRec
     
@@ -99,7 +99,7 @@
     
     (27) cirSen -> while + condition + do + sen 
     
-    (28) conSen -> begin + sen + senRec +end
+    (28) comSen -> begin + sen + senRec +end
     
     (29) senRec -> sen +  senRec | ε
 
