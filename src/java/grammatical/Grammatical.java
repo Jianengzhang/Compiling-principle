@@ -1,4 +1,4 @@
-package Grammatical;
+package grammatical;
 
 public class Grammatical {
     private int left;

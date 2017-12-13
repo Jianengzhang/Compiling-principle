@@ -1,7 +1,7 @@
 package lexical;
 
 
-import Grammatical.Grammatical;
+import grammatical.Grammatical;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class LexicalAnalysis {
 
-    private static final List<String> key = Arrays.asList("begin", "if", "then", "while", "do", "end", "read", "write", "Const", "Var");
+    private static final List<String> key = Arrays.asList("begin", "if", "then", "while", "do", "end", "read", "write", "Const", "Var","else");
     private static final char[] charArray = {' ','\t','\n','\r','+','-','*','/','=','>','<',';',',','.','(',')','[',']','{','}'};
 
     /**
@@ -189,6 +189,7 @@ public class LexicalAnalysis {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("---------------------------------------------------");
         return strings;
     }
 
