@@ -10,5 +10,9 @@ public class IntermediateCodeGeneration {
         }
 
     }
+    public void threeAddress(List<String> strings){
+
+
+    }
 
 }

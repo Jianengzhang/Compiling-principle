@@ -6,6 +6,10 @@ import java.util.List;
 public class GrammaticalAnalysis {
     int i = 0;
     int count = 0;
+    int countTemp = 0;
+    List<String> stringList = new ArrayList<>();
+    String temp = "";
+    String temp1= "";
     List<Grammatical> grammaticalList = new ArrayList<>();
 
     public List<String> analysis(List<Grammatical> grammatical) {
@@ -25,7 +29,7 @@ public class GrammaticalAnalysis {
         System.out.println("---------------------------------------------------");
         i = 0;
         count = 0;
-        return new ArrayList<>();
+        return stringList;
     }
 
 
@@ -191,6 +195,8 @@ public class GrammaticalAnalysis {
     }
 
     private boolean assSen() {
+        temp="t"+countTemp+"=";
+        temp1="";
         count++;
         for (int j = 0; j < count; j++) {
             System.out.print("    ");
@@ -201,7 +207,7 @@ public class GrammaticalAnalysis {
             System.out.print("    ");
         }
         System.out.println("ide: " + grammaticalList.get(i).getRight());
-
+        temp1=grammaticalList.get(i).getRight() + "=" + "t" + countTemp;
         i++;
         if (grammaticalList.get(i).getLeft() == 14) {
             for (int j = 0; j < count; j++) {
@@ -210,6 +216,8 @@ public class GrammaticalAnalysis {
             System.out.println("=");
             i++;
             expression();
+            stringList.add(temp);
+            stringList.add(temp1);
             if (grammaticalList.get(i).getLeft() == 21) {
                 for (int j = 0; j < count; j++) {
                     System.out.print("    ");
@@ -217,6 +225,7 @@ public class GrammaticalAnalysis {
                 System.out.println(";");
                 count -= 2;
             }
+            countTemp++;
             return true;
         } else {
             System.out.println("没有=");
@@ -236,6 +245,7 @@ public class GrammaticalAnalysis {
                     System.out.print("    ");
                 }
                 System.out.println(grammaticalList.get(i).getRight());
+                temp += grammaticalList.get(i).getRight();
                 i++;
                 item();
             } else {
@@ -255,6 +265,7 @@ public class GrammaticalAnalysis {
                     System.out.print("    ");
                 }
                 System.out.println(grammaticalList.get(i).getRight());
+                temp+=grammaticalList.get(i).getRight();
                 i++;
             } else {
                 return true;
@@ -271,18 +282,21 @@ public class GrammaticalAnalysis {
                 System.out.print("    ");
             }
             System.out.println("Identifier: " + grammaticalList.get(i).getRight());
+            temp+=grammaticalList.get(i).getRight();
             return true;
         } else if (grammaticalList.get(i).getLeft() == 13) {
             for (int j = 0; j < count; j++) {
                 System.out.print("    ");
             }
             System.out.println("Number:" + grammaticalList.get(i).getRight());
+            temp+=grammaticalList.get(i).getRight();
             return true;
         } else if (grammaticalList.get(i).getLeft() == 27) {
             for (int j = 0; j < count; j++) {
                 System.out.print("    ");
             }
             System.out.println("(");
+            temp+=grammaticalList.get(i).getRight();
             i++;
             expression();
             if (grammaticalList.get(i).getLeft() == 28) {
@@ -290,6 +304,7 @@ public class GrammaticalAnalysis {
                     System.out.print("    ");
                 }
                 System.out.println(")");
+                temp+=grammaticalList.get(i).getRight();
                 return true;
             }
             return false;
